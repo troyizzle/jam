@@ -1,0 +1,66 @@
+<div class="min-h-full">
+  <%= tag.nav data: { controller: "toggle", toggle_visibility_class_value: "hidden", action: "toggle-nav-bar@window->toggle#toggle" }, class: "bg-gray-800" do %>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+        <!-- Logo -->
+          <div class="flex-shrink-0">
+            <%= link_to root_path, class: "shrink-0 flex items-center fill-current hover:text-white" do %>
+              <%= image_tag "logo.jpg", class: "h-10 w-auto rounded-lg", alt: "logo" %>
+            <% end %>
+          </div>
+
+          <!-- Navigation links -->
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <%= link_to "Todo", "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desktop nav bar -->
+        <div class="hidden md:block">
+          <div class="ml-4 flex items-center md:ml-6 space-x-4">
+            <%= link_to t(".sign_in"), new_user_session_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+
+            <%= link_to t(".register"), new_user_registration_path, class: "px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-gray-500" %>
+          </div>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="-mr-2 flex items-center md:hidden">
+          <button
+              type="button"
+              data-action="toggle#toggle"
+              class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+            <span data-toggle-target="element">
+              <span class="sr-only">Open main menu</span>
+              <i class="fa-solid fa-bars"></i>
+            </span>
+
+            <span data-toggle-target="element" class="hidden">
+              <span class="sr-only">Close main menu</span>
+              <i class="fa-solid fa-x"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div data-toggle-target="element" class="hidden md:hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <%= link_to "Todo", "#", class: "block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+
+        <div class="pt-2">
+          <div class="border-t border-gray-500 pt-6 pb-2">
+            <%= link_to t(".register"), new_user_registration_path, class: "px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-gray-500 block text-center" %>
+            <%= link_to new_user_session_path, class: 'block mt-4 text-center text-gray-300 group' do %>
+              Have an account? <span class="text-white font-medium group-hover:text-gray-500"><%= t(".sign_in") %></span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
