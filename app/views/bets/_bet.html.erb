@@ -1,0 +1,9 @@
+<%= form_for bet, data: { controller: 'autosubmit' } do |f| %>
+  <div class="grid grid-cols-3 sm:grid-cols-5">
+    <div data-controller="update-input" class="flex items-center justify-center p-2.5 xl:p-5">
+      <p data-update-input-target="display" data-action="input->update-input#update input->autosubmit#submit" contenteditable class="text-black dark:text-white"><%= bet.book %></p>
+      <%= f.text_field :book, class: "hidden", data: { update_input_target: 'input' } %>
+    </div>
+  </div>
+<% end %>
+

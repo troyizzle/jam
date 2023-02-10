@@ -1,0 +1,19 @@
+<%= form_with model: profile, id: dom_id(profile) do |form| %>
+  <div class="dark:bg-gray-700 shadow px-4 py-3 lg:rounded-lg">
+    <div class="md:grid md:grid-cols-3 md:gap-6">
+      <div class="md:col-span-1">
+        <%= render TitleComponent.new("Avatar") %>
+        <p class="mt-1 text-sm text-gray-500">Your avatar!</p>
+      </div>
+      <div class="md:col-span-2">
+        <div class="flex flex-col space-y-2">
+          <div class="flex justify-center">
+            <%= render Users::AvatarComponent.new(avatar_url: current_user.profile.avatar_url, size: "xl") %>
+          </div>
+          <%= render Form::FileInputComponent.new(form, :avatar, classes: 'hidden') %>
+          <%= render Form::ButtonComponent.new(form, title: 'Update Avatar') %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

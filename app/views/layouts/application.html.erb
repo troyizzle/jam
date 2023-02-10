@@ -12,7 +12,7 @@
     <%= hotwire_livereload_tags if Rails.env.development? %>
   </head>
 
-  <body class="min-h-full flex flex-col dark:bg-gray-900 bg-gray-50">
+  <body class="min-h-full flex flex-col dark:text-bodydark body dark:bg-boxdark-2">
     <%= render "shared/navbar" %>
     <%= turbo_frame_tag 'flash' do %>
       <%= render 'layouts/flash' %>

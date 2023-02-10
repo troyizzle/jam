@@ -7,7 +7,7 @@
   "resolved" "https://registry.npmjs.org/@hotwired/stimulus/-/stimulus-3.2.1.tgz"
   "version" "3.2.1"
 
-"hotkeys-js@>=3":
+"hotkeys-js@>= 3", "hotkeys-js@>=3":
   "integrity" "sha512-mshqjgTqx8ee0qryHvRgZaZDxTwxam/2yTQmQlqAWS3+twnq1jsY9Yng9zB7lWq6WRrjTbTOc7knNwccXQiAjQ=="
   "resolved" "https://registry.npmjs.org/hotkeys-js/-/hotkeys-js-3.10.1.tgz"
   "version" "3.10.1"
@@ -25,6 +25,11 @@
   "version" "0.51.3"
   dependencies:
     "hotkeys-js" ">=3"
+
+"stimulus-use@^0.52.0":
+  "integrity" "sha512-b2Z2krSSIqKvG9ncrjMlxbX3SYg9mgL0g/1Zc25jTZjTr0//wgg7szUi9G67amBs/yLqO12GAEnudybZgYNnjA=="
+  "resolved" "https://registry.npmjs.org/stimulus-use/-/stimulus-use-0.52.0.tgz"
+  "version" "0.52.0"
 
 "tailwindcss-stimulus-components@^3.0.4":
   "integrity" "sha512-kv4CHEcTvZSmthV6PseSdnW/QqKh237fZrvbNKNhWeYsTuEnOrKvdbR+3CmpuTok7L4XgEXk+XOFfo7AMhhtAA=="

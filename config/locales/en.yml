@@ -30,8 +30,9 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   toggle_dark_mode: Toggle dark mode <i class="fa-solid fa-moon"></i>
   toggle_light_mode: Toggle light mode <i class="fa-solid fa-sun"></i>
   registrations:
     sign_up_hero: Create your account
+  sessions:
+    sign_in_hero: Login to your account

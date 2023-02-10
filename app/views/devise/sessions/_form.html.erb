@@ -1,0 +1,17 @@
+  <%= render "shared/errors", resource: resource %>
+  <%= form_for resource, as: resource_name, url: session_path(resource_name), html: { class: 'space-y-6' }, data: { turbo: false } do |form| %>
+    <%= render Form::FieldComponent.new(form, :email) do |field| %>
+      <% field.with_input_text %>
+    <% end %>
+    <%= render Form::FieldComponent.new(form, :password) do |field| %>
+      <% field.with_input_password %>
+    <% end %>
+    <% if devise_mapping.rememberable? %>
+      <div class="flex flex-row items-center">
+        <%= form.check_box :remember_me, class: 'rounded-sm mr-2' %>
+        <%= form.label :remember_me, class: 'dark:text-white' %>
+      </div>
+    <% end %>
+    <%= render Form::ButtonComponent.new(form, title: 'Login') %>
+  <% end %>
+
