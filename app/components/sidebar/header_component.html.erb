@@ -1,0 +1,10 @@
+<div class="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
+  <%= link_to root_url do %>
+    <%= render LogoComponent.new(theme: 'logo-dark') %>
+  <% end %>
+
+  <button class="lg:hidden block" data-action="click->sidebar#toggle">
+    <%= inline_svg_tag("icons/solid/arrow_left.svg", class: "h-6 w-6 fill-current") %>
+  </button>
+</div>
+

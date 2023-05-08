@@ -1,0 +1,44 @@
+<div class="col-span-5 xl:col-span-2">
+  <div
+      class="shadow-default rounded-sm border border-stroke dark:border-strokedark bg-white dark:bg-boxdark">
+    <div class="py-4 px-7 border-b border-stroke dark:border-strokedark">
+      <h3 class="font-medium text-black dark:text-white">Your Photo</h3>
+    </div>
+    <div class="p-7">
+      <%= form_for profile, url: profile_avatar_path(profile), data: { controller: 'image-preview' } do |form| %>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-14 h-14 rounded-full">
+            <%= render Users::AvatarComponent.new(user: current_user, size: 'md', data: { image_preview_target: 'preview' }) %>
+          </div>
+          <div>
+            <span class="text-black dark:text-white mb-1.5">Edit your photo</span>
+            <span class="flex gap-2.5">
+            </span>
+          </div>
+        </div>
+
+        <div id="FileUpload"
+             class="cursor-pointer block w-full py-4 sm:py-7.5 px-4 relative bg-gray dark:bg-meta-4 appearance-none border-2 border-dashed border-primary rounded mb-5.5">
+          <%= form.file_field :avatar,
+            accept: 'image/*',
+            class: 'cursor-pointer absolute inset-0 z-50 m-0 p-0 w-full h-full outline-none opacity-0',
+            data: { action: 'input->image-preview#preview' }
+          %>
+          <div class="flex flex-col space-y-3 items-center justify-center">
+            <span class="flex items-center justify-center w-10 h-10 rounded-full border border-stroke dark:border-strokedark bg-white dark:bg-boxdark">
+              <%= inline_svg_tag 'icons/solid/upload.svg', class: 'w-5 h-5 fill-whiter' %>
+            </span>
+            <p class="text-xs"><span class="text-primary">Click to upload</span> or drag and drop</p>
+            <p class="text-xs mt-1.5">SVG, PNG, JPG or GIF</p>
+            <p class="text-xs">(max, 800 X 800px)</p>
+          </div>
+        </div>
+
+        <div class="flex justify-end">
+          <%= render Form::ButtonComponent.new(form, title: 'Save', wide: false) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

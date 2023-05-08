@@ -1,1 +1,3 @@
 <%= turbo_stream.prepend "flash", partial: "layouts/flash" %>
+<%= turbo_stream.replace "new_bet", partial: "bets/bet", locals: { bet: @bet }  %>
+<%= turbo_stream.append "bets", partial: "bets/bet", locals: { bet: current_user.bets.new } %>

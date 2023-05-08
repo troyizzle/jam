@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Form
   class BaseComponent < ViewComponent::Base
     attr_reader :form, :field, :classes

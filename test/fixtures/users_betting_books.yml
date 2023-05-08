@@ -1,0 +1,9 @@
+_fixture:
+  model_class: Users::BettingBook
+
+user_betting_book_one:
+  email: 'foo@foo.com'
+  password: 'password'
+  user: example
+  betting_book: prize_picks
+

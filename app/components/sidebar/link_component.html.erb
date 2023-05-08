@@ -1,5 +1,5 @@
-<%= active_link_to @link, class_active: 'bg-gray-100 dark:bg-gray-400', class: 'flex flex-row hover:bg-gray-200 dark:hover:bg-blue-500 py-2 px-4 items-center rounded-lg text-xs block w-full', active: :exact do %>
-  <%= icon_element %>
-  <div class="ml-2 pr-2"><%= @title %></div>
+<%= active_link_to @url, class: "group relative font-medium flex items-center gap-2.5 rounded-sm ease-in-out duration-300 py-2 px-4 text-bodydark1 hover:bg-graydark dark:hover:bg-meta-4", class_active: 'bg-graydark dark:bg-meta-4', data: { turbo_frame: :dashboard_content, turbo_action: :advance, action: 'click->active#toggle', active_target: 'element' } do %>
+  <%= inline_svg_tag(@icon, class: "h-5 w-5 fill-whiter") %>
+  <%= @text %>
 <% end %>
 

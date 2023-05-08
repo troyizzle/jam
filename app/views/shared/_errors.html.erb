@@ -1,4 +1,6 @@
-<ul class="text-red-500 font-bold text-center">
+<% return unless resource.errors.any? %>
+
+<ul class="text-meta-1 font-bold text-center">
   <% resource.errors.each do |error| %>
     <li><%= error.full_message %></li>
   <% end %>

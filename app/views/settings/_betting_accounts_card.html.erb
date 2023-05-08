@@ -1,0 +1,18 @@
+<div class="col-span-5 xl:col-span-3">
+  <div
+      class="shadow-default rounded-sm border border-stroke dark:border-strokedark bg-white dark:bg-boxdark">
+    <div class="py-4 px-7 border-b border-stroke dark:border-strokedark">
+      <h3 class="font-medium text-black dark:text-white">Link betting books</h3>
+      <h4 class="text-xs text-black dark:text-white">Link your betting accounts to your profile.</h4>
+    </div>
+    <div class="p-7">
+      <%= turbo_stream_from "linked_betting_accounts" %>
+      <div class="flex flex-col space-y-3">
+        <% betting_books.each do |betting_book| %>
+          <%= render BettingBooks::Link::BaseComponent.new(betting_book: betting_book, user: current_user, user_betting_book: current_user.betting_books.find_by(betting_book: betting_book)) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

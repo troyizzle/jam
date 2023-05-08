@@ -1,0 +1,12 @@
+prize_picks:
+  name: PrizePicks
+  enabled: true
+draft_kings:
+  name: DraftKings
+  enabled: false
+fanduel:
+  name: FanDuel
+  enabled: false
+fantasy_auction:
+  name: FantasyAuction
+  enabled: false

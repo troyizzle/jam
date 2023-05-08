@@ -6,6 +6,10 @@ class ProfileTest < ActiveSupport::TestCase
     @profile = profiles(:one)
   end
 
+  test 'hashid profile URLs' do
+    assert_equal @profile.hashid.to_s, @profile.to_param
+  end
+
   test 'empty first_name is valid' do
     @profile.first_name = ''
     @profile.save
@@ -46,5 +50,33 @@ class ProfileTest < ActiveSupport::TestCase
     @profile.save
 
     assert_not @profile.valid?
+  end
+
+  test 'normalizes social media profile input' do
+    @profile.twitter = 'twitter.com/foobar'
+    @profile.save
+
+    assert_equal 'foobar', @profile.twitter
+  end
+
+  test 'assigns defualt cover image' do
+    profile = Profile.new(valid_profile_params)
+    profile.save!
+
+    assert profile.cover_image.attached?
+  end
+
+  test 'assigns defualt avatar' do
+    profile = Profile.new(valid_profile_params)
+    profile.save!
+
+    assert profile.avatar.attached?
+  end
+
+  def valid_profile_params
+    {
+      user: users(:example),
+      first_name: 'fobar',
+    }
   end
 end

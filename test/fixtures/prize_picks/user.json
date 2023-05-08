@@ -1,0 +1,62 @@
+{
+  "data": {
+    "id": "ceef0a4d-a09f-430f-b586-b95df14db8e5",
+    "type": "user",
+    "attributes": {
+      "email": "example@example.com",
+      "first_name": "John",
+      "last_name": "Doe",
+      "full_name": "John Doe",
+      "address": "123 Anywhere St",
+      "postal_code": "12345",
+      "city": "Rock",
+      "state": "NY",
+      "country_code": "US",
+      "role": null,
+      "phone_number": null,
+      "has_confirmed_phone_number": null,
+      "promo": 0.0,
+      "number_of_entries": 112,
+      "amount_won": 1967,
+      "verified": true,
+      "date_of_birth": "2001-01-01",
+      "push_notification_token": "dlFqFctCD6rm9xcvw0CiaAfv9uewEzZS",
+      "withdrawable_credit": 0.0,
+      "uid": null,
+      "provider": null,
+      "tourney_picks": 0,
+      "credit": 29.0,
+      "reward_picks": 0,
+      "notifications": false,
+      "invite_code": null,
+      "is_rotogrinders": null,
+      "referral_code": "AL-HEODACB",
+      "entries_won": 38,
+      "deposited_amount": 325.0,
+      "created_at": "2022-08-02T20:54:28.004-04:00",
+      "updated_at": "2023-02-17T15:05:47.924-05:00",
+      "chat_hash": "04cbf0607d09572352166d036de2c15604cbf0607d09572352166d036de2c156",
+      "idology_validation_state": "passed",
+      "confirmed_at": "2022-08-02T23:14:59.045-04:00",
+      "otp_status": "disabled",
+      "verification_image_reviewed": false,
+      "needs_tid": null,
+      "tid_validation": 0,
+      "last_deposit_at": "2023-02-14T18:55:01.919-05:00",
+      "default_entry_amount": null,
+      "default_entry_type": null,
+      "device_vibration": true,
+      "validation_provider": "idology",
+      "validation_state": "passed",
+      "show_balance": true,
+      "verification_image": null,
+      "terms_accepted": true
+    },
+    "relationships": {
+      "free_entries": {
+        "data": []
+      }
+    }
+  },
+  "included": []
+}

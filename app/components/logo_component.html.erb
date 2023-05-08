@@ -1,0 +1,7 @@
+<% if render_static_logo? %>
+ <%= inline_svg_tag icon %>
+<% else %>
+  <%= inline_svg_tag "icons/brand/logo-dark.svg", class: 'hidden dark:block' %>
+  <%= inline_svg_tag "icons/brand/logo.svg", class: 'block dark:hidden' %>
+<% end %>
+

@@ -1,0 +1,19 @@
+<div class="shadow-default rounded-sm border border-stroke dark:border-strokedark bg-white dark:bg-boxdark py-6 px-7.5">
+  <div class="flex items-center justify-center w-11.5 h-11.5 rounded-full bg-meta-2 dark:bg-meta-4">
+    <%= inline_svg_tag icon, class: "fill-primary dark:fill-white w-6 h-6" %>
+  </div>
+
+  <div class="flex items-end justify-between mt-4">
+    <div>
+      <h4 class="font-bold text-title-md text-black dark:text-white">
+        <%= @value %>
+      </h4>
+      <span class="font-medium text-sm"><%= @text %></span>
+    </div>
+
+    <%= tag.span class: span_class do %>
+      <%= percentage %>
+      <%= inline_svg_tag "icons/solid/arrow_#{arrow}.svg", class: arrow_class %>
+    <% end %>
+  </div>
+</div>

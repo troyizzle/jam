@@ -1,0 +1,29 @@
+{
+  "type": "prediction",
+  "id": "552052663",
+  "attributes": {
+    "is_promo": false,
+    "line_score": 7,
+    "wager_type": "over"
+  },
+  "relationships": {
+    "new_player": {
+      "data": {
+        "type": "new_player",
+        "id": "124289"
+      }
+    },
+    "projection": {
+      "data": {
+        "type": "projection",
+        "id": "1102888"
+      }
+    },
+    "score": {
+      "data": {
+        "type": "score",
+        "id": "1061903"
+      }
+    }
+  }
+}

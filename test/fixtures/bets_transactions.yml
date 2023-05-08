@@ -1,0 +1,19 @@
+_fixture:
+  model_class: Bets::Transaction
+
+one:
+  bet: bet_one
+  prize_pick_id: 7894302
+  data: {
+    attributes: {
+      updated_at: '2018-01-01T00:00:00.000Z',
+      object: {
+        data: {
+          attributes: {
+            result: 'pending'
+          }
+        }
+      }
+    }
+  }
+

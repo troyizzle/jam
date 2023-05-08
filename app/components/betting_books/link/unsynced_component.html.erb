@@ -1,0 +1,5 @@
+<%= link_to new_users_betting_book_path(betting_book_id: @betting_book.id), class: 'bg-meta-3 inline-flex gap-2.5 items-center justify-center py-4 px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10 w-full', data: { turbo_frame: :turbo_modal } do %>
+  <%= inline_svg_tag icon, class: 'h-6 w-6 bg-black rounded-full' %>
+  <span>Link <%= @betting_book.name %></span>
+<% end %>
+

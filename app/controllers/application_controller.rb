@@ -1,5 +1,6 @@
+# frozen_string_literal: true
 class ApplicationController < ActionController::Base
-  DEFAULT_THEME = 'dark'.freeze
+  DEFAULT_THEME = 'dark'
   before_action :set_theme
 
   private
@@ -11,8 +12,6 @@ class ApplicationController < ActionController::Base
   def set_theme
     return if cookies[:theme]
 
-    cookies[:theme] = {
-      value: DEFAULT_THEME
-    }
+    cookies[:theme] = { value: DEFAULT_THEME }
   end
 end

@@ -1,0 +1,223 @@
+{
+  "data": [
+    {
+      "type": "new_wager",
+      "id": "134928677",
+      "attributes": {
+        "amount_bet_cents": 2000,
+        "amount_to_win_cents": 6000,
+        "amount_won_cents": 0,
+        "code": null,
+        "correlated_entry": false,
+        "created_at": "2023-02-16T16:38:38-05:00",
+        "eligible_for_refund": false,
+        "is_gift": false,
+        "parlay_count": 2,
+        "payout_multipliers": {
+          "0": 3
+        },
+        "payouts": {
+          "2": {
+            "amount": 6000,
+            "multiplier": 3
+          }
+        },
+        "pick_protection": false,
+        "promo_tag": false,
+        "promotion_id": null,
+        "refund_allowed_until": null,
+        "result": "pending",
+        "reverted_payouts": {
+          "2": {
+            "amount": 6000,
+            "multiplier": 3
+          }
+        },
+        "ruleset_id": 1,
+        "sport": "NBA1H",
+        "updated_at": "2023-02-16T16:38:38-05:00",
+        "user_id": 1224768,
+        "uuid": null
+      },
+      "relationships": {
+        "predictions": {
+          "data": [
+            {
+              "type": "prediction",
+              "id": "520195535"
+            },
+            {
+              "type": "prediction",
+              "id": "520195536"
+            }
+          ]
+        },
+        "promotion": {
+          "data": null
+        }
+      }
+    },
+    {
+      "type": "new_wager",
+      "id": "134921060",
+      "attributes": {
+        "amount_bet_cents": 500,
+        "amount_to_win_cents": 12500,
+        "amount_won_cents": 0,
+        "code": null,
+        "correlated_entry": false,
+        "created_at": "2023-02-16T16:30:32-05:00",
+        "eligible_for_refund": false,
+        "is_gift": false,
+        "parlay_count": 6,
+        "payout_multipliers": {
+          "0": 25,
+          "1": 2,
+          "2": 0.4
+        },
+        "payouts": {
+          "4": {
+            "amount": 200,
+            "multiplier": 0.4
+          },
+          "5": {
+            "amount": 1000,
+            "multiplier": 2
+          },
+          "6": {
+            "amount": 12500,
+            "multiplier": 25
+          }
+        },
+        "pick_protection": true,
+        "promo_tag": false,
+        "promotion_id": null,
+        "refund_allowed_until": null,
+        "result": "pending",
+        "reverted_payouts": {
+          "3": {
+            "amount": 200,
+            "multiplier": 0.4
+          },
+          "4": {
+            "amount": 1000,
+            "multiplier": 2
+          },
+          "5": {
+            "amount": 5000,
+            "multiplier": 10
+          }
+        },
+        "ruleset_id": 1,
+        "sport": "MIXED: NBA,NBA1H",
+        "updated_at": "2023-02-16T16:30:32-05:00",
+        "user_id": 1224768,
+        "uuid": null
+      },
+      "relationships": {
+        "predictions": {
+          "data": [
+            {
+              "type": "prediction",
+              "id": "520165408"
+            },
+            {
+              "type": "prediction",
+              "id": "520165409"
+            },
+            {
+              "type": "prediction",
+              "id": "520165410"
+            },
+            {
+              "type": "prediction",
+              "id": "520165411"
+            },
+            {
+              "type": "prediction",
+              "id": "520165412"
+            },
+            {
+              "type": "prediction",
+              "id": "520165413"
+            }
+          ]
+        },
+        "promotion": {
+          "data": null
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "type": "prediction",
+      "id": "541020425",
+      "attributes": {
+        "is_promo": false,
+        "line_score": 4.5,
+        "wager_type": "over"
+      },
+      "relationships": {
+        "new_player": {
+          "data": {
+            "type": "new_player",
+            "id": "56700"
+          }
+        },
+        "projection": {
+          "data": {
+            "type": "projection",
+            "id": "1095318"
+          }
+        },
+        "score": {
+          "data": {
+            "type": "score",
+            "id": "997198"
+          }
+        }
+      }
+    },
+    {
+      "type": "score",
+      "id": "997198",
+      "attributes": {
+        "details": {
+          "FantasyScore": 10.5,
+          "ReceivingTargets": 6,
+          "ReceivingYards": 55,
+          "Receptions": 5,
+          "UpdatedAt": "Feb 12 2023 at 09:22PM ET"
+        },
+        "is_auto_settled": true,
+        "is_final": true,
+        "is_off_the_board": false,
+        "score": 6,
+        "unders_win_dnp": false
+      }
+    },
+    {
+      "type": "new_player",
+      "id": "59515",
+      "attributes": {
+        "image_url": "https://static.prizepicks.com/images/players/nhl/Evander_Kane_4354082b-0f24-11e2-8525-18a905767e44.webp",
+        "league": "NHL",
+        "league_id": 8,
+        "market": "Edmonton",
+        "name": "Evander Kane",
+        "position": "F",
+        "team": "EDM",
+        "team_name": "Oilers"
+      },
+      "relationships": {
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "8"
+          }
+        }
+      }
+    }
+  ]
+}

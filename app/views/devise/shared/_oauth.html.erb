@@ -1,11 +1,11 @@
 <%- if devise_mapping.omniauthable? %>
   <div class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5 dark:text-white">
-    <p class="text-center font-semibold mx-4 mb-0">OR</p>
+    <p class="text-center font-semibold">OR</p>
   </div>
-  <div class="flex space-x-3 w-full mr-1 flex-wrap mt-2">
+  <div class="flex space-x-3 w-full mr-1 flex-wrap p-2 pb-4">
     <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= button_to omniauth_authorize_path(resource_name, provider), method: :post, form_class: 'flex flex-grow', class: 'bg-gray-500 flex-grow text-white flex items-center py-1 px-2 rounded-sm justify-center mt-1', data: { turbo: false } do %>
-        <%= tag.i class: "fa-brands fa-#{provider}" %>
+      <%= button_to omniauth_authorize_path(resource_name, provider), method: :post, form_class: 'flex flex-grow', class: 'bg-meta-4 flex-grow text-white flex items-center py-1 px-2 rounded-sm justify-center mt-1', data: { turbo: false } do %>
+        <%= inline_svg_tag "icons/brand/#{provider}.svg", class: "w-5 h-5 fill-white" %>
         <div class="ml-2"><%= OmniAuth::Utils.camelize(provider) %></div>
       <% end %>
     <% end %>

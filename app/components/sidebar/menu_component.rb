@@ -2,14 +2,20 @@
 
 module Sidebar
   class MenuComponent < ViewComponent::Base
-    renders_many :links, lambda { |title:, link:, icon:|
-      LinkComponent.new(title:, link:, icon:)
-    }
+    def initialize(user:)
+      @user = user
+    end
 
-    def initialize; end
+    def links
+      [
+        { url: dashboard_path, text: 'Dashboard', icon: 'icons/solid/gear.svg' },
+        { url: profile_path(@user.profile), text: 'Profile', icon: 'icons/solid/user.svg' },
+        { url: settings_path, text: 'Settings', icon: 'icons/solid/gear.svg' }
+      ]
+    end
 
-    def icon_element
-      tag.i class: @icon
+    def render_content?
+      @user.present?
     end
   end
 end

@@ -1,52 +1,7 @@
-<!-- ===== Page Wrapper Start ===== -->
-<div class="flex h-screen overflow-hidden">
-  <!-- ===== Content Area Start ===== -->
-  <div class="flex flex-col flex-1 relative overflow-x-hidden overflow-y-auto">
-    <!-- ===== Header Start ===== -->
-    <!-- ===== Header End ===== -->
-
-    <!-- ===== Main Content Start ===== -->
-    <main>
-      <div class="max-w-screen-2xl mx-auto p-4 md:p-6 2xl:p-10">
-        <!-- Breadcrumb Start -->
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
-          <h2 class="font-semibold text-title-md2 text-black dark:text-white">Chart</h2>
-
-          <nav>
-            <ol class="flex items-center gap-2">
-              <li><a href="index.html">Dashboard /</a></li>
-              <li class="text-primary">Chart</li>
-            </ol>
-          </nav>
-        </div>
-        <!-- Breadcrumb End -->
-
-        <div class="grid grid-cols-12 gap-4 md:gap-6 2xl:gap-7.5">
-          <!-- ====== Chart Four Start -->
-          <div class="col-span-12">
-            <div
-                class="col-span-12 shadow-default rounded-sm border border-stroke bg-white dark:bg-gray-700 px-5 pt-7.5 pb-5 sm:px-7.5">
-              <div>
-                <h3 class="text-xl font-semibold text-black dark:text-white">
-                  Visitors Analytics
-                </h3>
-              </div>
-              <div>
-                <div id="chartFour" class="-ml-5">
-                  <% data = { '2021-01-01' => 5, '2021-01-03' => 1 } %>
-                  <%= line_chart data %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-2">
-          <%= render 'table1', bets: @bets %>
-        </div>
-    </main>
-    <!-- ===== Main Content End ===== -->
-      </div>
-      <!-- ===== Content Area End ===== -->
-  </div>
-  <!-- ===== Page Wrapper End ===== -->
+<%= turbo_frame_tag :dashboard_content do %>
+  <%= render Dashboard::LayoutComponent.new do %>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 2xl:gap-7.5">
+      <%= render Dashboard::CardComponent.new(text: 'Total Profit', icon: 'solid/cart_shopping.svg', value: @bet_stats[:total], percentage: @bet_stats[:percentage]) %>
+    </div>
+  <% end %>
+<% end %>

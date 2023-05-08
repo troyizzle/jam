@@ -1,1 +1,1 @@
-<%= tag.img src: avatar_url, class: classes %>
+<%= image_tag @user.profile.avatar, class: classes, **@args, alt: 'User Avatar' %>

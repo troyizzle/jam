@@ -1,7 +1,19 @@
-<div class="flex flex-col space-y-2 col text-base font-normal text-gray-900 dark:text-white p-1 w-full">
-  <% links.each do |link| %>
-    <%= link %>
-  <% end %>
-</div>
-
-
+<% return unless render_content? %>
+<aside
+  data-sidebar-target="sidebar"
+  class="flex flex-col absolute left-0 top-0 lg:static lg:translate-x-0 bg-black dark:bg-boxdark w-72.5 ease-linear duration-300 z-9999 h-screen overflow-y-hidden"
+  >
+  <%= render Sidebar::HeaderComponent.new %>
+  <div class="flex flex-col overflow-y-auto no-scrollbar ease-linear duration-300">
+    <nav class="py-4 px-4 lg:px-6 mt-5 lg:mt-9">
+      <div>
+        <h3 class="font-semibold text-sm text-bodydark2 mb-4 ml-4">MENU</h3>
+        <ul class="flex flex-col gap-1.5 mb-6" data-controller="active" data-active-class-value="bg-graydark dark:bg-meta-4">
+          <% links.each do |link| %>
+            <%= render Sidebar::LinkComponent.new(**link) %>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</aside>

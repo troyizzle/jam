@@ -1,17 +1,24 @@
+<%= open_graph_tags({title: 'Register'})%>
 <%= render Layout::HeroComponent.new(title: t("registrations.sign_up_hero"))  do %>
-  <%= render "shared/errors", resource: resource %>
-  <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: { class: 'space-y-6' }, data: { turbo: false } do |form| %>
-    <%= render Form::FieldComponent.new(form, :email) do |field| %>
-      <% field.with_input_text %>
+  <div class="p-6.5">
+    <%= render "shared/errors", resource: resource %>
+    <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: { class: 'space-y-6' }, data: { turbo: false } do |form| %>
+      <%= render Form::FieldComponent.new(form, :email) do |field| %>
+        <% field.with_input_text %>
+      <% end %>
+      <%= render Form::FieldComponent.new(form, :password) do |field| %>
+        <% field.with_input_password %>
+      <% end %>
+      <%= render Form::FieldComponent.new(form, :password_confirmation) do |field| %>
+        <div data-controller="password" class="relative items-center">
+          <%= field.with_input_password(data: { password_target: 'input' }) %>
+          <button type="button" data-action="password#toggle">
+            <%= inline_svg_tag("icons/solid/eye.svg", class: "w-4 h-4 absolute right-1 top-4 fill-gray", "aria-hidden": "true") %>
+          </button>
+        </div>
+      <% end %>
+      <%= render Form::ButtonComponent.new(form, title: 'Register') %>
     <% end %>
-    <%= render Form::FieldComponent.new(form, :password) do |field| %>
-      <% field.with_input_password %>
-    <% end %>
-    <%= render Form::FieldComponent.new(form, :password_confirmation) do |field| %>
-      <% field.with_input_password %>
-    <% end %>
-    <%= render Form::ButtonComponent.new(form, title: 'Register') %>
-  <% end %>
-
+  </div>
   <%= render "devise/shared/oauth" %>
 <% end %>

@@ -1,23 +1,14 @@
-<%= tag.turbo_frame id: "modal" do %>
-  <div class="relative z-10 bg-gray-700" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-    <div class="fixed inset-0 bg-black bg-opacity-75 transition-opacity"></div>
-
-    <div class="fixed inset-0 z-10 overflow-y-auto">
-      <div class="flex md:min-h-full pt-24 md:pt-0 items-end justify-center p-4 text-center sm:items-center sm:p-0">
-        <div class="relative transform overflow-hidden rounded-lg text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-          <div class="bg-gray-700 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-              <% if render_title? %>
-                <h3 class="text-lg font-medium leading-6 dark:text-white text-gray-900" id="modal-title"><%= @title %></h3>
-              <% end %>
-              <div class="mt-2">
-                <%= content %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<turbo-frame id="turbo_modal">
+  <div data-controller="modal" data-action="turbo:submit-end->modal#closeOnSuccess keyup@window->modal#closeWithEscape click@window->modal#closeBackground" class="fixed top-0 left-0 flex h-full min-h-screen w-full items-center justify-center bg-black/90 px-4 py-5 z-999999">
+    <div data-modal-target="modal" class="w-full max-w-142.5 rounded-lg bg-white dark:bg-boxdark py-12 px-8 text-center md:py-15 md:px-17.5">
+      <h3 class="text-black dark:text-white pb-2 text-xl font-bold sm:text-2xl">
+        <%= @title %>
+      </h3>
+      <span class="bg-primary mx-auto mb-6 inline-block h-1 w-22.5 rounded"></span>
+      <% if body? %>
+        <p class="mb-10"><%= body %></p>
+      <% end %>
+      <%= content %>
     </div>
   </div>
-  </div>
-<% end %>
+</turbo-frame>

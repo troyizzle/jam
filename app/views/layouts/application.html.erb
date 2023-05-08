@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <%= tag.html class: html_classes do %>
   <head>
-    <title>Jam</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= render_open_graph_tags %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tags %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
     <%= hotwire_livereload_tags if Rails.env.development? %>
   </head>
 
-  <body class="min-h-full flex flex-col dark:text-bodydark body dark:bg-boxdark-2">
-    <%= render "shared/navbar" %>
-    <%= turbo_frame_tag 'flash' do %>
-      <%= render 'layouts/flash' %>
-    <% end %>
-    <div class="flex-1">
-      <main class="mx-auto">
+  <body class="dark:text-bodydark dark:bg-boxdark-2">
+    <%= render Layout::DashboardComponent.new(user: current_user) do %>
+      <%= render Sidebar::MenuComponent.new(user: current_user) %>
+      <div class="flex flex-col flex-1 relative overflow-x-hidden overflow-y-auto">
+        <%= render Dashboard::HeaderComponent.new(user: current_user) %>
+        <%= render "layouts/flash", flash: flash %>
         <%= yield %>
-      </main>
-    </div>
+      </div>
+    <% end %>
+    <%= turbo_frame_tag :turbo_modal %>
   </body>
 <% end %>

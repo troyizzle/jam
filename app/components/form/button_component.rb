@@ -2,11 +2,12 @@
 
 module Form
   class ButtonComponent < ViewComponent::Base
-    attr_reader :form, :title
+    attr_reader :form, :title, :wide
 
-    def initialize(form, title:)
+    def initialize(form, title:, wide: true)
       @form = form
       @title = title
+      @wide = wide
     end
 
     def call
@@ -16,7 +17,12 @@ module Form
     private
 
     def classes
-      "w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+      class_names(
+        'flex justify-center font-medium text-gray rounded bg-primary p-2', {
+          "w-full": wide,
+          "px-6": !wide,
+        }
+      )
     end
   end
 end

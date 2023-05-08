@@ -5,13 +5,22 @@
   <div class="flex flex-col">
     <div class="grid grid-cols-3 sm:grid-cols-5 bg-gray-2 dark:bg-meta-4 rounded-sm">
       <div class="p-2.5 xl:p-5 text-center">
-        <h5 class="font-medium text-sm xsm:text-base uppercase">Book</h5>
+        <h5 class="font-medium text-sm xsm:text-base uppercase">Date</h5>
+      </div>
+      <div class="p-2.5 xl:p-5 text-center">
+        <h5 class="font-medium text-sm xsm:text-base uppercase">Status</h5>
+      </div>
+      <div class="p-2.5 xl:p-5 text-center">
+        <h5 class="font-medium text-sm xsm:text-base uppercase">Stake</h5>
+      </div>
+      <div class="p-2.5 xl:p-5 text-center">
+        <h5 class="font-medium text-sm xsm:text-base uppercase">Result</h5>
       </div>
     </div>
 
+    <%= turbo_stream_from "bets" %>
     <div id="bets">
       <%= render partial: 'bets/bet', collection: @bets %>
     </div>
-    <%= render partial: 'bets/bet', locals: { bet: current_user.bets.new } %>
   </div>
 </div>

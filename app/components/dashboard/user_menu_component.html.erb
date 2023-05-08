@@ -1,0 +1,22 @@
+<div class="relative" data-controller="dropdown">
+  <button class="flex items-center gap-4" data-action="click->dropdown#toggle click@window->dropdown#hide">
+    <span class="w-12 h-12 rounded-full">
+      <%= render Users::AvatarComponent.new(user: @user, size: "sm") %>
+    </span>
+
+    <%= inline_svg_tag("icons/solid/caret_down.svg", class: "h-6 w-6 fill-current") %>
+  </button>
+
+  <div data-dropdown-target="menu"
+       class="hidden flex flex-col shadow-default rounded-sm border border-stroke dark:border-strokedark bg-white dark:bg-boxdark w-62.5 absolute right-0 mt-4">
+    <ul class="flex flex-col gap-5 border-b border-stroke dark:border-strokedark px-6 py-7.5">
+      <% links.each do |link| %>
+        <%= render Dashboard::UserMenuLinkComponent.new(**link) %>
+      <% end %>
+    </ul>
+    <%= link_to destroy_user_session_path, data: {action: "click->dropdown#toggle", turbo_method: :delete }, class: 'font-medium text-sm lg:text-base flex items-center gap-3.5 ease-in-out duration-300 hover:text-primary py-4 px-6' do %>
+      <%= inline_svg_tag("icons/outline/door.svg", class: "h-5 w-5 fill-current") %>
+      Log out
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<%= open_graph_tags title: "Settings"  %>
+<%= turbo_frame_tag :dashboard_content do %>
+  <%= render Dashboard::LayoutComponent.new(page_title: 'Settings', max_w_div_classes: 'sm') do %>
+    <div class="grid grid-cols-5 gap-8">
+      <%= render "profiles/form", profile: @profile %>
+      <%= render "avatar_card", profile: @profile  %>
+      <%= render "profiles/cover_images/form", profile: @profile %>
+      <%= render "betting_accounts_card", betting_books: @betting_books %>
+    </div>
+  <% end %>
+<% end %>

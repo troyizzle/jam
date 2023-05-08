@@ -1,7 +1,9 @@
-<div>
-  <%= form.label field, label, class: 'block text-sm font-medium text-gray-700 dark:text-white' %>
-  <div class="mt-1">
+<%= form.label field, label, class: 'mb-2.5 block text-black dark:text-white' %>
+<% if content %>
+  <%= content %>
+<% else %>
+  <div class="mb-4.5">
     <%= input %>
   </div>
-</div>
+<% end %>
 

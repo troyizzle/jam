@@ -1,5 +1,7 @@
 <%= render Layout::HeroComponent.new(title: t("sessions.sign_in_hero"))  do %>
-  <%= render 'form', resource: resource %>
+  <div class="p-6.5">
+    <%= render 'form', resource: resource %>
+  </div>
   <div class="mt-2 text-center dark:text-white">
     <span>Don't have an account? </span><%= render "devise/shared/sign_up_link" %>
   </div>

@@ -1,0 +1,61 @@
+{
+  "data": {
+    "type": "new_wager",
+    "id": "134928677",
+    "attributes": {
+      "amount_bet_cents": 2000,
+      "amount_to_win_cents": 6000,
+      "amount_won_cents": 0,
+      "code": null,
+      "correlated_entry": false,
+      "created_at": "2023-02-16T16:38:38-05:00",
+      "eligible_for_refund": false,
+      "is_gift": false,
+      "parlay_count": 2,
+      "payout_multipliers": {
+        "0": 3
+      },
+      "payouts": {
+        "2": {
+          "amount": 6000,
+          "multiplier": 3
+        }
+      },
+      "pick_protection": false,
+      "promo_tag": false,
+      "promotion_id": null,
+      "refund_allowed_until": null,
+      "result": "pending",
+      "reverted_payouts": {
+        "2": {
+          "amount": 6000,
+          "multiplier": 3
+        }
+      },
+      "ruleset_id": 1,
+      "sport": "NBA1H",
+      "updated_at": "2023-02-16T16:38:38-05:00",
+      "user_id": 1224768,
+      "uuid": null
+    },
+    "relationships": {
+      "predictions": {
+        "data": [
+          {
+            "type": "prediction",
+            "id": "520195535"
+          },
+          {
+            "type": "prediction",
+            "id": "520195536"
+          }
+        ]
+      },
+      "promotion": {
+        "data": null
+      }
+    }
+
+  }
+}
+

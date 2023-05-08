@@ -6,7 +6,8 @@ module Form
       date: ->(**args) { DateInputComponent.new(form, field, classes:, **args) },
       file: ->(**args) { FileInputComponent.new(form, field, classes:, **args) },
       text: ->(**args) { TextInputComponent.new(form, field, classes:, **args) },
-      password: ->(**args) { PasswordInputComponent.new(form, field, classes:, **args) }
+      text_area: ->(**args) { TextAreaInputComponent.new(form, field, classes:, **args) },
+      password: ->(**args) { PasswordInputComponent.new(form, field, classes:, **args) },
     }
 
     attr_reader :form, :field, :label, :helg
@@ -19,10 +20,10 @@ module Form
     end
 
     def classes
-      class_names('appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm dark:bg-gray-700  dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:text-white shadow-md', {
-                    "border-rose-500": errors?,
-                    "dark:border-gray-600": !errors?
-                  })
+      class_names('w-full min-w-0 bg-gray rounded border border-stroke focus-visible:outline-none focus:border-primary dark:focus:border-primary text-black dark:text-white py-3 pr-4.5 dark:bg-meta-4 dark:border-strokedark pl-5.5', {
+        "border-meta-1": errors?,
+        "border-stroke dark:border-form-strokedark": !errors?,
+      })
     end
 
     private

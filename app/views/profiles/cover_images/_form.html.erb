@@ -1,0 +1,23 @@
+<div class="col-span-5 xl:col-span-3">
+  <div
+      class="shadow-default rounded-sm border border-stroke dark:border-strokedark bg-white dark:bg-boxdark">
+    <div class="py-4 px-7 border-b border-stroke dark:border-strokedark">
+      <h3 class="font-medium text-black dark:text-white">Your Cover Photo</h3>
+    </div>
+    <div class="p-7">
+      <%= form_with model: profile, url: profile_cover_image_path(profile), id: "cover_image_#{profile.id}", data: { controller: 'image-preview' } do |form| %>
+        <div class="relative mb-5.5">
+          <%= form.file_field :cover_image, class: "hidden", data: { action: 'input->image-preview#preview' }, accept: 'image/*' %>
+          <div class="w-full rounded-full aspect-auto">
+            <%= image_tag profile.cover_image, alt: 'developer cover image', class: 'h-64 w-full', data: { image_preview_target: 'preview' } %>
+            <%= form.label :cover_image, class: "bg-boxdark font-medium text-gray p-2 rounded cursor-pointer absolute right-0 bottom-1 z-10 m-5 focus:ring-2 focus:ring-offset-2 focus:ring-meta-2" %>
+          </div>
+        </div>
+        <div class="flex justify-end mt-4">
+          <%= render Form::ButtonComponent.new(form, title: 'Save', wide: false) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

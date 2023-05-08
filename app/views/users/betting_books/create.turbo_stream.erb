@@ -1,0 +1,2 @@
+<%= turbo_stream.prepend "flash", partial: "layouts/flash" %>
+<%= turbo_stream.replace dom_id(@user_betting_book.betting_book), partial: "users/betting_books/link", locals: { betting_book: @user_betting_book.betting_book, user: current_user, user_betting_book: @user_betting_book } %>

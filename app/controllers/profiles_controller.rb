@@ -1,10 +1,9 @@
+# frozen_string_literal: true
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_profile
-  # GET /profile/edit
-  def edit
-    @mode = params[:mode]
-  end
+
+  def show; end
 
   # PATCH/PUT /profiles/1 or /profiles/1.json
   def update
@@ -20,11 +19,10 @@ class ProfilesController < ApplicationController
   private
 
   def set_profile
-    @profile = current_user.profile
+    @profile = Profile.find_by_hashid!(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :date_of_birth)
+    params.require(:profile).permit(:first_name, :last_name, :bio, :avatar, :date_of_birth, :github, :twitter)
   end
 end

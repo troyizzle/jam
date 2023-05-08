@@ -2,14 +2,10 @@
 
 module Sidebar
   class LinkComponent < ViewComponent::Base
-    def initialize(title:, link:, icon:)
-      @title = title
-      @link = link
+    def initialize(url:, text:, icon:)
+      @url = url
+      @text = text
       @icon = icon
-    end
-
-    def icon_element
-      tag.i class: @icon
     end
   end
 end

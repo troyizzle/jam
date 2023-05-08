@@ -1,0 +1,37 @@
+<%= render ModalComponent.new(title: "Link your #{@user_betting_book.name} account") do |c| %>
+  <% c.with_body do %>
+    This password will be encrypted when saved, but will need to be decrypted when fetching data from the API.
+  <% end %>
+  <%= form_for @user_betting_book do |form| %>
+    <div class="mb-2">
+      <div class="shadow-default rounded-sm bg-white dark:bg-boxdark">
+        <div class="p-6.5">
+          <div class="mb-4.5">
+            <%= form.hidden_field :betting_book_id, value: @user_betting_book.betting_book_id %>
+            <%= form.label :email, class: 'mb-2.5 block text-black dark:text-white' %>
+            <%= form.email_field :email, class: 'border-stroke dark:border-form-strokedark dark:bg-form-input focus:border-primary dark:focus:border-primary active:border-primary bg-transparent w-full rounded border-[1.5px] py-3 px-5 font-medium outline-none transition disabled:cursor-default disabled:bg-whiter', placeholder: 'Enter email..' %>
+          </div>
+          <div>
+            <%= form.label :password, class: 'mb-2.5 block text-black dark:text-white' %>
+            <div data-controller="password" class="relative items-center">
+              <%= form.password_field :password, class: 'border-stroke dark:border-form-strokedark dark:bg-form-input focus:border-primary dark:focus:border-primary active:border-primary bg-transparent w-full rounded border-[1.5px] py-3 px-5 font-medium outline-none transition disabled:cursor-default disabled:bg-whiter', placeholder: 'Enter password..', data: { password_target: 'input' } %>
+              <button type="button" data-action="password#toggle">
+                <%= inline_svg_tag("icons/solid/eye.svg", class: "w-4 h-4 absolute right-1 top-4 fill-gray", "aria-hidden": "true") %>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="-mx-3 flex flex-wrap gap-y-4">
+      <div class="w-full 2xsm:w-1/2 px-3">
+        <button data-action="modal#close" class="text-black dark:text-white block w-full rounded border border-stroke dark:border-strokedark bg-gray dark:bg-meta-4 p-3 text-center font-medium transition hover:border-meta-1 dark:hover:border-meta-1 hover:bg-meta-1 dark:hover:bg-meta-1 hover:text-white">
+          Cancel
+        </button>
+      </div>
+      <div class="w-full 2xsm:w-1/2 px-3">
+        <%= form.button 'Link Account', class: 'bg-primary border-primary block w-full rounded border p-3 text-center font-medium text-white transition hover:bg-opacity-90' %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

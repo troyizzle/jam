@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -10,13 +11,20 @@ gem 'bootsnap', require: false
 gem 'chartkick'
 gem 'devise'
 gem 'font-awesome-sass', '~> 6.2.1' # TODO: Move this
+gem 'groupdate'
+gem 'hashid-rails'
+gem 'inline_svg'
 gem 'jsbundling-rails'
 gem 'omniauth'
 gem 'omniauth-discord'
 gem 'omniauth-rails_csrf_protection'
 gem 'pg', '~> 1.1'
+gem 'prizepicks'
 gem 'puma', '~> 5.0'
 gem 'redis', '~> 4.0'
+gem 'rubocop', require: false
+gem 'rubocop-performance', require: false
+gem 'rubocop-rails', require: false
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
@@ -36,6 +44,7 @@ end
 group :test do
   gem 'capybara'
   gem 'faker'
+  gem "minitest-stub_any_instance"
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
